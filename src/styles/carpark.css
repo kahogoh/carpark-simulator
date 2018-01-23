@@ -4,39 +4,55 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0.5em;
 }
 .carpark-row {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: center;
 }
 .carpark-unit {
   display: flex;
   position: relative;
-  height: 6em;
-  width: 6em;
+  width: 20%;
+  max-height: 6em;
+  max-width: 6em;
   background-color: blue;
   margin: 0.1em;
+  overflow: hidden;
+}
+.carpark-unit:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 .carpark-face {
   position: absolute;
-  height: 2em;
-  width: 2em;
+  width: 33%;
+  max-height: 2em;
+  max-width: 2em;
+}
+.carpark-face:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 .carpark-face.north {
   top: 0;
-  left: 2em;
+  left: 33%;
 }
 .carpark-face.east {
   right: 0;
-  top: 2em;
+  top: 33%;
 }
 .carpark-face.south {
   bottom: 0;
-  left: 2em;
+  left: 33%;
 }
 .carpark-face.west {
   left: 0;
-  top: 2em;
+  top: 33%;
 }
 .carpark-face:before {
   transition: border-color 300ms;
@@ -51,27 +67,46 @@
 }
 .carpark-unit:hover .carpark-face.north:before {
   bottom: 0;
-  left: -25%;
+  transform: translate(-50%, 0);
+  left: 50%;
   border-width: 0 1.5em 1.5em 1.5em;
   border-color: transparent transparent #007bff transparent;
 }
 .carpark-unit:hover .carpark-face.east:before {
   left: 0;
-  top: -25%;
+  transform: translate(0, -50%);
+  top: 50%;
   border-width: 1.5em 0 1.5em 1.5em;
   border-color: transparent transparent transparent #007bff;
 }
 .carpark-unit:hover .carpark-face.south:before {
   top: 0;
-  left: -25%;
+  transform: translate(-50%, 0);
+  left: 50%;
   border-width: 1.5em 1.5em 0 1.5em;
   border-color: #007bff transparent transparent transparent;
 }
 .carpark-unit:hover .carpark-face.west:before {
   right: 0;
-  top: -25%;
+  transform: translate(0, -50%);
+  top: 50%;
   border-width: 1.5em 1.5em 1.5em 0;
   border-color: transparent #007bff transparent transparent;
+}
+
+@media only screen and (max-width: 480px) {
+  .carpark-unit:hover .carpark-face.north:before {
+    border-width: 0 1em 1em 1em;
+  }
+  .carpark-unit:hover .carpark-face.east:before {
+    border-width: 1em 0 1em 1em;
+  }
+  .carpark-unit:hover .carpark-face.south:before {
+    border-width: 1em 1em 0 1em;
+  }
+  .carpark-unit:hover .carpark-face.west:before {
+    border-width: 1em 1em 1em 0;
+  }
 }
 .carpark-face:hover:before {
   z-index: 10;
