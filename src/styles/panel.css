@@ -1,0 +1,32 @@
+.panel-container {
+  width: 15em;
+}
+
+.panel-buttons {
+}
+.panel-btn-wrapper {
+  width: 100%;
+  float: left;
+}
+.panel-btn-wrapper.left,
+.panel-btn-wrapper.right {
+  width: 50%;
+}
+.panel-btn {
+  cursor: pointer;
+  padding: 1em 0;
+  margin: 0.25em;
+  background-color: green;
+}
+.panel-actions {
+  white-space: pre-line;
+  text-align: left;
+}
+.span-unit {
+  font-style: italic;
+  color: blue;
+}
+.span-panel {
+  font-style: italic;
+  color: green;
+}

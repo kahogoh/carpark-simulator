@@ -1,0 +1,121 @@
+.carpark-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carpark-row {
+  display: flex;
+  flex-direction: row;
+}
+.carpark-unit {
+  display: flex;
+  position: relative;
+  height: 6em;
+  width: 6em;
+  background-color: blue;
+  margin: 0.1em;
+}
+.carpark-face {
+  position: absolute;
+  height: 2em;
+  width: 2em;
+}
+.carpark-face.north {
+  top: 0;
+  left: 2em;
+}
+.carpark-face.east {
+  right: 0;
+  top: 2em;
+}
+.carpark-face.south {
+  bottom: 0;
+  left: 2em;
+}
+.carpark-face.west {
+  left: 0;
+  top: 2em;
+}
+.carpark-face:before {
+  transition: border-color 300ms;
+  transition-timing-function: ease;
+}
+.carpark-unit:hover .carpark-face:before {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.carpark-unit:hover .carpark-face.north:before {
+  bottom: 0;
+  left: -25%;
+  border-width: 0 1.5em 1.5em 1.5em;
+  border-color: transparent transparent #007bff transparent;
+}
+.carpark-unit:hover .carpark-face.east:before {
+  left: 0;
+  top: -25%;
+  border-width: 1.5em 0 1.5em 1.5em;
+  border-color: transparent transparent transparent #007bff;
+}
+.carpark-unit:hover .carpark-face.south:before {
+  top: 0;
+  left: -25%;
+  border-width: 1.5em 1.5em 0 1.5em;
+  border-color: #007bff transparent transparent transparent;
+}
+.carpark-unit:hover .carpark-face.west:before {
+  right: 0;
+  top: -25%;
+  border-width: 1.5em 1.5em 1.5em 0;
+  border-color: transparent #007bff transparent transparent;
+}
+.carpark-face:hover:before {
+  z-index: 10;
+  cursor: pointer;
+}
+.carpark-face.north:hover:before {
+  border-bottom-color: white !important;
+}
+.carpark-face.east:hover:before {
+  border-left-color: white !important;
+}
+.carpark-face.south:hover:before {
+  border-top-color: white !important;
+}
+.carpark-face.west:hover:before {
+  border-right-color: white !important;
+}
+
+.carpark-unit-name {
+  color: #007bff;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.carpark-bus {
+  position: absolute;
+  display: flex;
+  flex: 1;
+  z-index: 100;
+}
+.carpark-bus.west {
+  transform: scaleX(-1);
+  right: 0;
+}
+.carpark-bus.north {
+  transform: rotate(270deg);
+  bottom: 0;
+  right: 0;
+}
+.carpark-bus.south {
+  transform: rotate(90deg);
+}
+.image-bus {
+  width: 6.5em;
+}

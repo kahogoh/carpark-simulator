@@ -1,0 +1,5 @@
+node_modules/
+build
+src/registerServiceWorker.js
+packages/react-scripts/template
+packages/react-scripts/fixtures
