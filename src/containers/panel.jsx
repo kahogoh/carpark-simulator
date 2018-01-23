@@ -4,6 +4,10 @@ import CarparkStore from '../stores/carpark.store'
 import '../styles/panel.css'
 
 class Panel extends Component {
+  handleStart = () => {
+    CarparkStore.place(0, 0, 0)
+  }
+
   handleLeft = () => {
     CarparkStore.left()
   }
@@ -32,7 +36,7 @@ class Panel extends Component {
         </div>
         <div className="panel-buttons">
           {
-            ['Move', 'Left', 'Right', 'Report'].map((key) => {
+            ['Start', 'Move', 'Left', 'Right', 'Report'].map((key) => {
               const onClick = this[`handle${key}`]
               const props = {
                 key,

@@ -13,7 +13,10 @@ class CarparkStore {
   })
   actions = observable([])
 
-  isValidBus = () => this.bus.x >= 0 && this.bus.y >= 0
+  isValidBus = (target = this.bus) => target.x >= 0
+    && target.y >= 0
+    && target.x < maxX
+    && target.y < maxY
 
   resetBus = () => {
     transaction(() => {
@@ -23,6 +26,11 @@ class CarparkStore {
   }
 
   place = (x, y, face) => {
+    if (!this.isValidBus({ x, y })) {
+      this.actions.replace([])
+      return
+    }
+
     transaction(() => {
       this.bus.x = x
       this.bus.y = y
