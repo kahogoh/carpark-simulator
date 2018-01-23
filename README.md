@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/kahogoh/carpark-simulator.svg?style=svg)](https://circleci.com/gh/kahogoh/carpark-simulator)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 [Demo](https://carpark-simulator.firebaseapp.com/)
@@ -14,10 +16,14 @@ Running following script to run the project and web app will be prompt in your d
 npm start
 ```
 
-## Unit Test
+## Unit Test / ESLint / Coverage
 Running following script will be execute the unit testing script:
 ```
-npm run test
+npm test
+```
+Running following script will generate the test coverage report:
+```
+npm run coverage
 ```
 Running following script will be validate the standard scripting styles:
 ```
