@@ -1,5 +1,6 @@
 node_modules/
-build
+build/
+coverage/
 src/registerServiceWorker.js
 packages/react-scripts/template
 packages/react-scripts/fixtures
