@@ -2,8 +2,8 @@ import { observable, transaction } from 'mobx'
 import Config from '../Config'
 
 
-const maxX = Config.ROW
-const maxY = Config.COL
+const maxX = Config.COL
+const maxY = Config.ROW
 
 class CarparkStore {
   bus = observable({
@@ -38,29 +38,29 @@ class CarparkStore {
 
     transaction(() => {
       if (this.bus.face === 0) { // North
-        let newX = this.bus.x + step
-        if (newX >= maxX) {
-          newX = maxX - 1
-        }
-        this.bus.x = newX
-      } else if (this.bus.face === 1) { // East
         let newY = this.bus.y + step
         if (newY >= maxY) {
           newY = maxY - 1
         }
         this.bus.y = newY
-      } else if (this.bus.face === 2) { // South
-        let newX = this.bus.x - step
-        if (newX < 0) {
-          newX = 0
+      } else if (this.bus.face === 1) { // East
+        let newX = this.bus.x + step
+        if (newX >= maxX) {
+          newX = maxX - 1
         }
         this.bus.x = newX
-      } else if (this.bus.face === 3) { // West
+      } else if (this.bus.face === 2) { // South
         let newY = this.bus.y - step
         if (newY < 0) {
           newY = 0
         }
         this.bus.y = newY
+      } else if (this.bus.face === 3) { // West
+        let newX = this.bus.x - step
+        if (newX < 0) {
+          newX = 0
+        }
+        this.bus.x = newX
       }
       this.actions.push('MOVE')
     })

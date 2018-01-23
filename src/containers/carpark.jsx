@@ -24,7 +24,7 @@ class Carpark extends Component {
                   Array(Config.COL).fill().map((_y, col) => {
                     // get bus face if it is same location
                     let busFace
-                    if (CarparkStore.bus.x === row && CarparkStore.bus.y === col) {
+                    if (CarparkStore.bus.x === col && CarparkStore.bus.y === row) {
                       busFace = CarparkStore.bus.face
                     }
                     // Carpark Unit onPress
@@ -33,7 +33,7 @@ class Carpark extends Component {
                     }
                     const props = {
                       key: `${row}col${col}`,
-                      name: `${row}, ${col}`,
+                      name: `${col}, ${row}`,
                       face: busFace,
                       onPress,
                     }

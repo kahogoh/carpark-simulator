@@ -14,7 +14,7 @@
     "start": "NODE_PATH=src react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
     "lint": "eslint --ext=js --ext=jsx .",
-    "test": "NODE_PATH=src react-scripts test --env=jsdom",
+    "test": "NODE_PATH=src CI=true react-scripts test --env=jsdom",
     "eject": "NODE_PATH=src react-scripts eject"
   },
   "devDependencies": {
@@ -26,7 +26,8 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint-plugin-react": "^7.5.1",
+    "mocha": "^5.0.0"
   },
   "babel": {
     "plugins": [
