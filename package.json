@@ -15,6 +15,7 @@
     "build": "NODE_PATH=src react-scripts build",
     "lint": "eslint --ext=js --ext=jsx .",
     "test": "NODE_PATH=src CI=true react-scripts test --env=jsdom",
+    "coverage": "NODE_PATH=src CI=true react-scripts test --env=jsdom --coverage",
     "eject": "NODE_PATH=src react-scripts eject"
   },
   "devDependencies": {
